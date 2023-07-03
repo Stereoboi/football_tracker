@@ -2,7 +2,7 @@
 import { Session } from "next-auth";
 import React, { useEffect } from "react";
 import { Navbar, Collapse, IconButton } from "../MaterialTailwindReecsport";
-// import addUserToDatabase from "../../../../lib/addUserToDb";
+import addUserToDatabase from "../../../../lib/addUserToDb";
 import { Bars2Icon } from "@heroicons/react/24/outline";
 import { ProfileMenu } from "./ProfileMenu";
 import { NavList } from "./NavList";
@@ -16,18 +16,18 @@ export default function ComplexNavbar({ user }: Session) {
   const [isNavOpen, setIsNavOpen] = React.useState(false);
   const toggleIsNavOpen = () => setIsNavOpen((cur) => !cur);
 
-  // useEffect(() => {
-  //   const addUser = async () => {
-  //     if (status === "authenticated") {
-  //       try {
-  //         await addUserToDatabase("bohdan", "pishchak");
-  //       } catch (error) {
-  //         console.log(error);
-  //       }
-  //     }
-  //   };
-  //   addUser();
-  // }, [status]);
+  useEffect(() => {
+    const addUser = async () => {
+      if (status === "authenticated") {
+        try {
+          await addUserToDatabase(session.user?.name, session.user?.email);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    };
+    addUser();
+  }, [status]);
 
   const signInClick = async () => {
     signIn();
