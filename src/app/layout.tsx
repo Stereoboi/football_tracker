@@ -5,7 +5,7 @@ import { ThemeProvider } from "./components/MaterialTailwindReecsport";
 import Provider from "./components/Provider";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "./api/auth/[...nextauth]/route";
-import DarkThemeProvider from "./conntext/ThemeContext";
+import DarkThemeProvider from "../conntext/ThemeContext";
 
 // import { ThemeProvider } from "next-themes";
 

@@ -1,8 +1,8 @@
 import { NextResponse, NextRequest } from "next/server";
 
 import connect from "../../../../util/mongoConnect";
-import Post from "@/app/models/Post";
-import User from "@/app/models/User";
+import Post from "@/models/Post";
+import User from "@/models/User";
 
 export const GET = async (request: Request) => {
   try {
