@@ -75,7 +75,7 @@ export default function EditForm({ id }: { id: string }) {
         }
       };
       editUserPost();
-
+      router.refresh();
       setReady(false);
     }
   }, [ready, router, value]);
