@@ -1,4 +1,4 @@
-import Post from "@/models/Post";
+import Post from "../../../models/Post";
 import connect from "../../../../util/mongoConnect";
 import { NextResponse, NextRequest } from "next/server";
 
