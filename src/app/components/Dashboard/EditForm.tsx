@@ -6,8 +6,8 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import UploadBtn from "../createPost/UploadButton";
 import getNewsById from "../../../../lib/getNewsFromDbById";
-import addPostToDatabase from "../../../../lib/addPostToDb";
 import editPost from "../../../../lib/editPost";
+import { mutate } from "swr";
 
 type Post = {
   _id: string;
@@ -53,8 +53,11 @@ export default function EditForm({ id }: { id: string }) {
         content: values.content,
         username: session?.user?.name,
       }));
+      // mutate(
+      //   `${process.env.NEXT_PUBLIC_DEPLOY_URL}/api/getuserspost?username=${session?.user?.name}`
+      // );
       router.back();
-      router.refresh();
+      // router.refresh();
       setReady(true);
       formik.resetForm();
     },
@@ -75,7 +78,7 @@ export default function EditForm({ id }: { id: string }) {
         }
       };
       editUserPost();
-      router.refresh();
+
       setReady(false);
     }
   }, [ready, router, value]);
@@ -132,7 +135,7 @@ export default function EditForm({ id }: { id: string }) {
         <div>
           <UploadBtn state={setValue} />
           <button
-            disabled={disabled}
+            // disabled={disabled}
             // type="submit"
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
           >

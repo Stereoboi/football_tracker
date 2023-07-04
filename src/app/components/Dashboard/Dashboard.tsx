@@ -33,10 +33,10 @@ export default function Dashboard() {
     isLoading,
   }: { data: Post[]; mutate: any; error: any; isLoading: any } = useSWR(
     `${process.env.NEXT_PUBLIC_DEPLOY_URL}/api/getuserspost?username=${session?.user?.name}`,
-    fetcher
+    fetcher,
+    { refreshInterval: 1000 }
   );
   console.log(data);
-  console.log(session?.user?.name);
 
   //  цей useEffect використовується для оновлення (мутації) даних при переході на сторінку та оновлення вмісту списку постів
   useEffect(() => {
