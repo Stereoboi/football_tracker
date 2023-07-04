@@ -8,7 +8,6 @@ import UploadBtn from "../createPost/UploadButton";
 import getNewsById from "../../../../lib/getNewsFromDbById";
 import addPostToDatabase from "../../../../lib/addPostToDb";
 import editPost from "../../../../lib/editPost";
-import useSWR from "swr";
 
 type Post = {
   _id: string;
@@ -56,7 +55,6 @@ export default function EditForm({ id }: { id: string }) {
       }));
       router.back();
       router.refresh();
-      router.replace("/dashboard");
       setReady(true);
       formik.resetForm();
     },
