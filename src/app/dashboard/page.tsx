@@ -2,9 +2,10 @@ import React from "react";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 import { authOptions } from "../api/auth/[...nextauth]/route";
-import Dashboard from "../components/Dashboard/Dashboard";
+import { SWRProvider } from "../swr-provider";
 import { Metadata } from "next";
-
+import ListOfUserPostss from "../components/Dashboard/ListOfUserPosts";
+import CreateFormPost from "../components/Dashboard/CreatePostForm";
 export const metadata: Metadata = {
   title: "Dashboard page",
   description: "Dashboard page",
@@ -16,15 +17,12 @@ export default async function DashboardPage() {
     redirect("/");
   }
 
-  // const data: Post[] = await getNews();
-
-  // console.log(data.filter((el) => el.username === session?.user?.name));
-
-  // const posts: Post[] = data.filter((el) => el.username === "Богдан Піщак");
-
-  // const posts: Post[] = await getNewsByName("Богдан Піщак");
-
-  // className = "grid grid-cols-2 gap-8";
-
-  return <div>{<Dashboard />}</div>;
+  return (
+    <div className="grid grid-cols-2 gap-8">
+      <SWRProvider>
+        <ListOfUserPostss />
+        <CreateFormPost />
+      </SWRProvider>
+    </div>
+  );
 }

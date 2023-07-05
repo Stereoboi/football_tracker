@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import UploadBtn from "../createPost/UploadButton";
 import getNewsById from "../../../../lib/getNewsFromDbById";
 import editPost from "../../../../lib/editPost";
-import { mutate } from "swr";
+import useSWR, { useSWRConfig } from "swr";
 
 type Post = {
   _id: string;
@@ -29,6 +29,9 @@ export default function EditForm({ id }: { id: string }) {
   const { data: session, status } = useSession();
   const [initialValue, setInitialValue] = useState<Post>();
 
+  const { data, mutate } = useSWR(
+    `${process.env.NEXT_PUBLIC_DEPLOY_URL}/api/getuserspost?username=${session?.user?.name}`
+  );
   useEffect(() => {
     const getNews = async () => {
       const result = await getNewsById(id);
@@ -53,11 +56,10 @@ export default function EditForm({ id }: { id: string }) {
         content: values.content,
         username: session?.user?.name,
       }));
+      router.back();
       // mutate(
       //   `${process.env.NEXT_PUBLIC_DEPLOY_URL}/api/getuserspost?username=${session?.user?.name}`
       // );
-      router.back();
-      // router.refresh();
       setReady(true);
       formik.resetForm();
     },
@@ -73,6 +75,7 @@ export default function EditForm({ id }: { id: string }) {
       const editUserPost = async () => {
         try {
           const result = await editPost(value, id);
+          mutate();
         } catch (error) {
           console.log(error);
         }
