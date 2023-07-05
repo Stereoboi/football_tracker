@@ -27,7 +27,7 @@ export default function DarkThemeProvider({
   return (
     <ThemeContext.Provider value={{ mode, toggle }}>
       <body
-        className={`theme  ${mode} text-xs  sm:text-sm lg:text-base font-rubick relative `}
+        className={`theme  ${mode} text-xs  sm:text-sm lg:text-base xl:text-lg font-rubick relative `}
       >
         {children}
       </body>

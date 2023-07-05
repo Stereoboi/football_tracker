@@ -28,8 +28,8 @@ export const metadata = {
 
 export default async function RootLayout(props: {
   children: React.ReactNode;
-  // modal: React.ReactNode;
   edit: React.ReactNode;
+  article: React.ReactNode;
 }) {
   const session = await getServerSession(authOptions);
 
@@ -44,8 +44,8 @@ export default async function RootLayout(props: {
               expires={session?.expires as string}
             />
             {props.children}
-            {/* {props.modal} */}
             {props.edit}
+            {props.article}
           </ThemeProvider>
         </Provider>
       </DarkThemeProvider>
