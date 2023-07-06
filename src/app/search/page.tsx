@@ -11,11 +11,11 @@ export default function SearchPage() {
   const [err, setErr] = useState(false);
 
   // ErrorHandler for API REQUEST LIMIT
-  useEffect(() => {
-    if (err) {
-      throw new Error("ERRROOOOORRRRR");
-    }
-  }, [err]);
+  // useEffect(() => {
+  //   if (err) {
+  //     throw new Error("ERRROOOOORRRRR");
+  //   }
+  // }, [err]);
 
   useEffect(() => {
     if (inputValue) {
