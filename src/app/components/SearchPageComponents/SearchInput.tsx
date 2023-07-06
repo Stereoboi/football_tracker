@@ -1,11 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { useFormik } from "formik";
-import findTeamByName from "../../../../lib/FindTeamByName";
 
 export default function SearchInput({ value }: any) {
-  const [inputValue, setInputValue] = useState("");
-
   const formik = useFormik({
     initialValues: {
       search: "",
@@ -17,15 +14,6 @@ export default function SearchInput({ value }: any) {
       formik.resetForm();
     },
   });
-
-  useEffect(() => {
-    if (inputValue) {
-      const findTeam = async () => {
-        const result = await findTeamByName(inputValue);
-      };
-      findTeam();
-    }
-  }, [inputValue]);
 
   return (
     <form onSubmit={formik.handleSubmit}>

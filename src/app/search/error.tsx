@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+
 export default function Error({
   error,
   reset,
@@ -12,13 +13,19 @@ export default function Error({
   const router = useRouter();
   useEffect(() => {
     // Log the error to an error reporting service
-    console.error(error.message);
+    console.error(error);
   }, [error]);
+
+  const handleClick = () => {
+    router.back();
+  };
 
   return (
     <div>
-      <h2>Something went wrong!{error.message}</h2>
-      <button onClick={() => router.push("/leagues")}>Try again</button>
+      <h2 className="dark:text-white text-gray-800 text-center">
+        {error.message}
+      </h2>
+      <button onClick={handleClick}>Try again</button>
     </div>
   );
 }

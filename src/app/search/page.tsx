@@ -10,21 +10,14 @@ export default function SearchPage() {
   const [foundData, setFoundData] = useState<SearchTeam>();
   const [err, setErr] = useState(false);
 
-  // ErrorHandler for API REQUEST LIMIT
-  // useEffect(() => {
-  //   if (err) {
-  //     throw new Error("ERRROOOOORRRRR");
-  //   }
-  // }, [err]);
-
   useEffect(() => {
     if (inputValue) {
       const fetchedSearchResult = async () => {
         const result = await findTeamByName(inputValue);
 
-        if (result.errors.requests === process.env.NEXT_PUBLIC_ERROR) {
-          setErr(true);
-        }
+        // if (result.errors.requests === process.env.NEXT_PUBLIC_ERROR) {
+        //   setErr(true);
+        // }
         setFoundData(result);
       };
       fetchedSearchResult();

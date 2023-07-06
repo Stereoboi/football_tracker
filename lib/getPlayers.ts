@@ -5,7 +5,7 @@ export default async function getPlayers(teamId: string) {
       method: "GET",
       headers: {
         "x-rapidapi-host": "v3.football.api-sports.io",
-        "x-rapidapi-key": `${process.env.NEXT_PUBLIC_FOOTBALL_API_KEY}`,
+        "x-rapidapi-key": `${process.env.NEXT_FOOTBALL_API_KEY}`,
       },
       next: { revalidate: 86400 },
     }

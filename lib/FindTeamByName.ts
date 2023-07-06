@@ -7,7 +7,7 @@ export default async function findTeamByName(name: string) {
         "x-rapidapi-host": "v3.football.api-sports.io",
         "x-rapidapi-key": `${process.env.NEXT_PUBLIC_FOOTBALL_API_KEY}`,
       },
-      next: { revalidate: 86400 },
+      // next: { revalidate: 86400 },
     }
   );
 
