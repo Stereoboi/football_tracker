@@ -18,6 +18,7 @@ type Params = {
 
 export default async function Leagues() {
   const leaguesData: ResponseItem[] = await getAllLeagues();
+  console.log(leaguesData);
 
   return (
     <div className="">

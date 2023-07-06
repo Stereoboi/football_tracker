@@ -2,10 +2,7 @@
 
 export default async function getAllLeagues() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_DEPLOY_URL}/api/leaguesId`,
-    {
-      next: { revalidate: 0 },
-    }
+    `${process.env.NEXT_PUBLIC_DEPLOY_URL}/api/leaguesId`
   );
 
   if (!res.ok) return undefined;

@@ -120,7 +120,7 @@ interface PlayerStatistics {
 interface ScorersApiResponse {
   get: string;
   parameters: { season: string; league: string };
-  errors: any[];
+  errors: any;
   results: number;
   paging: { current: number; total: number };
   response: { player: Player; statistics: PlayerStatistics[] }[];
