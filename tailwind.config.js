@@ -27,6 +27,9 @@ module.exports = withMT({
       scale: {
         98: "0.99",
       },
+      opacity: {
+        99: "0.99",
+      },
       fontFamily: {
         rubick: ["var(--font-rubick)"],
         bangers: ["var(--font-bangers)"],

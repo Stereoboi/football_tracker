@@ -27,19 +27,19 @@ export default async function Home() {
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
-            <div className="w-3/4 text-center md:w-2/4 ">
+            <div className="w-3/4 text-center md:w-2/4 relative ">
+              <div className=" absolute inset-0 sm:bg-brush bg-none bg-contain bg-top md:bg-center bg-no-repeat opacity-80 "></div>
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-4 text-3xl md:text-4xl lg:text-5xl font-permanent_Marker"
+                className="mb-4 opacity-95 text-3xl md:text-4xl lg:text-5xl font-permanent_Marker z-50 "
               >
                 The Beauty of Game
               </Typography>
-
               <Typography
                 variant="lead"
                 color="white"
-                className="mb-12 opacity-80 font-righteous"
+                className="mb-12 opacity-95 font-righteous z-50 "
               >
                 Are you a football enthusiast? Dive into the world of football
                 on our football tracker. Explore the latest matches, team
@@ -49,7 +49,7 @@ export default async function Home() {
               <div className="flex justify-center gap-2">
                 <Link
                   href={"/leagues"}
-                  className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:bg-transparent dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                  className="font-righteous z-50 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:bg-transparent dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                 >
                   Explore
                 </Link>
@@ -64,11 +64,13 @@ export default async function Home() {
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 grid h-full w-full items-center bg-black/75">
-            <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32">
+            <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32 relative">
+              <div className=" absolute inset-0 sm:bg-brush bg-none bg-contain bg-center bg-no-repeat opacity-80 "></div>
+
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-4 text-3xl md:text-4xl lg:text-5xl font-permanent_Marker"
+                className="font-righteous mb-4 opacity-95 text-3xl md:text-4xl lg:text-5xl font-permanent_Marker"
               >
                 Are you interested in football?
               </Typography>
@@ -76,7 +78,7 @@ export default async function Home() {
               <Typography
                 variant="lead"
                 color="white"
-                className="mb-12 opacity-80 font-righteous"
+                className="mb-12 opacity-95 font-righteous"
               >
                 Do you follow your favorite team but forgot something about
                 them? No worries, you can easily find any football club on the
@@ -85,7 +87,7 @@ export default async function Home() {
               <div className="flex gap-2">
                 <Link
                   href={"/leagues"}
-                  className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:bg-transparent dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                  className="font-righteous z-50 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:bg-transparent dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                 >
                   Explore
                 </Link>
@@ -100,18 +102,20 @@ export default async function Home() {
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 grid h-full w-full items-end bg-black/75">
-            <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32">
+            <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32 relative">
+              <div className=" absolute inset-0 sm:bg-brush lg: bg-none bg-contain bg-no-repeat opacity-80 "></div>
+
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-4 text-3xl md:text-4xl lg:text-5xl font-permanent_Marker"
+                className="mb-4 opacity-99 text-3xl md:text-4xl lg:text-5xl font-permanent_Marker"
               >
                 Create and share
               </Typography>
               <Typography
                 variant="lead"
                 color="white"
-                className="mb-12 opacity-80 font-righteous"
+                className="mb-12 opacity-99 font-righteous"
               >
                 Do you follow football news but wish to express your own point
                 of view? Join us and publish your articles or thoughts about
@@ -120,7 +124,7 @@ export default async function Home() {
               <div className="flex gap-2">
                 <Link
                   href={"/leagues"}
-                  className="text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:bg-transparent dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                  className=" font-righteous z-50 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:bg-transparent dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
                 >
                   Explore
                 </Link>
