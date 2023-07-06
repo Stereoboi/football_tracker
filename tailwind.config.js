@@ -19,6 +19,7 @@ module.exports = withMT({
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "gradient-custom": "linear-gradient(163deg, #00ff75 0%, #3700ff 100%)",
+        brush: "url('../../public/brush.png')",
       },
       boxShadow: {
         lg: "0px 0px 30px 1px rgba(0, 255, 117, 0.30)",
@@ -29,6 +30,8 @@ module.exports = withMT({
       fontFamily: {
         rubick: ["var(--font-rubick)"],
         bangers: ["var(--font-bangers)"],
+        permanent_Marker: ["var(--font-permanent_Marker)"],
+        righteous: ["var(--font-righteous)"],
       },
     },
     colors: {

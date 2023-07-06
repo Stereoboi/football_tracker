@@ -7,6 +7,7 @@ import {
   Button,
 } from "./components/MaterialTailwindReecsport";
 import { Metadata } from "next";
+import brush from "../../public/brsh.png";
 
 export const metadata: Metadata = {
   title: "Football Tracker",
@@ -26,18 +27,19 @@ export default async function Home() {
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
-            <div className="w-3/4 text-center md:w-2/4">
+            <div className="w-3/4 text-center md:w-2/4 ">
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                className="mb-4 text-3xl md:text-4xl lg:text-5xl font-permanent_Marker"
               >
                 The Beauty of Game
               </Typography>
+
               <Typography
                 variant="lead"
                 color="white"
-                className="mb-12 opacity-80"
+                className="mb-12 opacity-80 font-righteous"
               >
                 Are you a football enthusiast? Dive into the world of football
                 on our football tracker. Explore the latest matches, team
@@ -66,14 +68,15 @@ export default async function Home() {
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                className="mb-4 text-3xl md:text-4xl lg:text-5xl font-permanent_Marker"
               >
                 Are you interested in football?
               </Typography>
+
               <Typography
                 variant="lead"
                 color="white"
-                className="mb-12 opacity-80"
+                className="mb-12 opacity-80 font-righteous"
               >
                 Do you follow your favorite team but forgot something about
                 them? No worries, you can easily find any football club on the
@@ -101,14 +104,14 @@ export default async function Home() {
               <Typography
                 variant="h1"
                 color="white"
-                className="mb-4 text-3xl md:text-4xl lg:text-5xl"
+                className="mb-4 text-3xl md:text-4xl lg:text-5xl font-permanent_Marker"
               >
                 Create and share
               </Typography>
               <Typography
                 variant="lead"
                 color="white"
-                className="mb-12 opacity-80"
+                className="mb-12 opacity-80 font-righteous"
               >
                 Do you follow football news but wish to express your own point
                 of view? Join us and publish your articles or thoughts about

@@ -1,20 +1,16 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import Link from "next/link";
 import { Post } from "../../../../types/PostsType";
 
 export default function Pagination({ pages }: { pages: Post[] }) {
-  const router = useRouter();
   const params = useParams();
   const [newsNum, setNewsNum] = useState<number>();
   const [ready, setReady] = useState(false);
   const [arrows, setArrows] = useState<number>();
-  console.log(!params);
 
   useEffect(() => {
-    console.log(params);
-
     if (params.id) {
       setArrows(Number(params.id));
     } else {
