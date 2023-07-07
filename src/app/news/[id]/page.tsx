@@ -11,13 +11,13 @@ type Params = {
   };
 };
 
-export async function generateStaticParams() {
-  const result: Post[] = await getAllNewsFromDb();
+// export async function generateStaticParams() {
+//   const result: Post[] = await getAllNewsFromDb();
 
-  return result.map((el) => ({
-    id: el._id,
-  }));
-}
+//   return result.map((el) => ({
+//     id: el._id,
+//   }));
+// }
 
 async function getNumberOfPages() {
   const res = await fetch(
