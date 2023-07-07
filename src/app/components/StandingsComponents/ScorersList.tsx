@@ -1,5 +1,6 @@
 import React from "react";
 import { ScorersApiResponse } from "../../../../types/topScorers";
+import Error from "../Error/Error";
 
 export default function ScorersList({
   scorers,
@@ -8,12 +9,11 @@ export default function ScorersList({
 }) {
   const result = scorers.response;
   const error = scorers.errors.requests;
-  console.log(error);
 
   return (
     <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
       {error ? (
-        <div>ERROR</div>
+        <Error error={error} />
       ) : (
         result.map((el, index) => (
           <div
