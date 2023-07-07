@@ -1,6 +1,5 @@
 export default async function addPostToDatabase(value: any) {
   const { img, title, description, content, username } = value;
-  console.log();
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_DEPLOY_URL}/api/addpost`, {
     method: "POST",

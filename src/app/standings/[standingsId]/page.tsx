@@ -12,7 +12,6 @@ type Params = {
 
 export async function generateMetadata({ params: { standingsId } }: Params) {
   const standingData: StandingApiResponse = await getStanding(standingsId);
-  console.log(standingData);
 
   return {
     title: `${standingData.response[0].league.name} standing`,

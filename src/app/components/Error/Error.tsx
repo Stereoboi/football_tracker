@@ -3,8 +3,6 @@ import React from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 export default function Error({ error }: any) {
-  console.log(error);
-
   return (
     // <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
     <div className="flex align-middle justify-center">
