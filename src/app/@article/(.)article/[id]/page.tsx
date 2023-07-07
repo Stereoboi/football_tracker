@@ -38,7 +38,7 @@ export default async function NewsModal({ params }: Params) {
           <img
             src={post.img}
             alt="img"
-            className="mb-3 max-w-2xl max-h-[380px]"
+            className="mb-3 max-w-2xl max-h-[380px] mx-auto"
           />
           <p className="dark:text-gray-400">{post.content}</p>
           <div className="flex flex-col mt-3">

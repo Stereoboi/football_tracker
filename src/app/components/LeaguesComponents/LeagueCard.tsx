@@ -20,8 +20,8 @@ type League = {
 export default function LeagueCard({ dataLeague }: { dataLeague: League }) {
   return (
     <Link href={`/standings/${dataLeague.league.id}`}>
-      <div className="bg-gradient-custom rounded-lg hover:rounded-lg focus:rounded-lg transition-all duration-300 dark:text-white">
-        <div className="flex flex-col items-center rounded-lg  hover:shadow-lg hover:scale-98 bg-white  dark:bg-blue-gray-800 hover:rounded-lg transition-all duration-300 ">
+      <div className="bg-gradient-custom rounded-lg hover:rounded-lg focus:rounded-lg transition-all duration-300 dark:text-white text-gray-700">
+        <div className="flex flex-col items-center rounded-lg  hover:shadow-lg hover:scale-98 bg-light-blue-100  dark:bg-blue-gray-800 hover:rounded-lg transition-all duration-300 ">
           <Image
             src={dataLeague.league.logo}
             alt={dataLeague.league.name}

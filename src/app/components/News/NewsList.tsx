@@ -3,6 +3,7 @@ import { PostResponse } from "../../../../types/newsDataType";
 import Link from "next/link";
 import { Post } from "../../../../types/PostsType";
 import moment from "moment";
+import Image from "next/image";
 
 export default function NewsList({ data }: { data: Post[] }) {
   return (
@@ -18,10 +19,12 @@ export default function NewsList({ data }: { data: Post[] }) {
               key={el._id}
               className="flex flex-col max-w-sm min-w-min bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
             >
-              <img
+              <Image
                 className="rounded-t-lg h-44 w-full object-cover"
                 src={el.img}
                 alt=""
+                width={400}
+                height={400}
               />
 
               <div className="p-5 w-full ">

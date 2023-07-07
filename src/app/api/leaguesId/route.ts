@@ -14,7 +14,7 @@ export async function GET() {
   );
   const data = await res.json();
 
-  const leaguesIds = [39, 78, 135, 140];
+  const leaguesIds = [39, 78, 135, 140, 61, 88];
 
   const filteredData = data.response.filter((el: ResponseItem) =>
     leaguesIds.includes(el.league.id)

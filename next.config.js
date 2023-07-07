@@ -6,6 +6,7 @@ const nextConfig = {
       "media-2.api-sports.io",
       "media-3.api-sports.io",
       "pbs.twimg.com",
+      "uploadthing.com",
     ],
   },
 };
