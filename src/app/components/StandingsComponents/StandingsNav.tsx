@@ -72,6 +72,7 @@ export default function StandingsNav({ path }: StandingsNavProps) {
         </li>
         <li>
           <Link
+            prefetch={false}
             href={`/standings/${path}/fixtures`}
             className={`inline-block p-4 rounded-t-lg ${
               isActive === "fixtures"
