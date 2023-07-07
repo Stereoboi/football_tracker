@@ -12,6 +12,8 @@ export async function middleware(request: NextRequest, response: NextResponse) {
   const result: ScorersApiResponse = await getTopScorers(id[2]);
   console.log("RESULT", result.errors.requests);
   if (result.errors.requests === process.env.NEXT_PUBLIC_ERROR) {
+    console.log("I WORKED");
+
     return NextResponse.redirect(
       new URL(`${process.env.NEXT_PUBLIC_DEPLOY_URL}`, request.url)
     );
