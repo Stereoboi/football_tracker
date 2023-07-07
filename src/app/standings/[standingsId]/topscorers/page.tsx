@@ -21,6 +21,7 @@ export async function generateMetadata({ params: { standingsId } }: Params) {
 
 export default async function TopScorers({ params: { standingsId } }: Params) {
   const result: ScorersApiResponse = await getTopScorers(standingsId);
+  console.log(result);
 
   return (
     <div>

@@ -7,7 +7,8 @@ export default function ScorersList({
   scorers: ScorersApiResponse;
 }) {
   const result = scorers.response;
-  const error = scorers.errors;
+  const error = scorers.errors.requests;
+  console.log(error);
 
   return (
     <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">

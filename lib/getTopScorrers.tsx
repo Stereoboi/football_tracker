@@ -9,6 +9,7 @@ export default async function getTopScorers(leaguesId: string) {
         "x-rapidapi-host": "v3.football.api-sports.io",
         "x-rapidapi-key": `${process.env.NEXT_FOOTBALL_API_KEY}`,
       },
+      next: { revalidate: 0 },
     }
   );
 
