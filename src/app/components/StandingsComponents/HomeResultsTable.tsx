@@ -54,6 +54,7 @@ export default function HomeResultsTable({
                       />
                     </div>
                     <Link
+                      prefetch={false}
                       href={`/team/${el.team.id}/${standings.response[0].league.id}`}
                       passHref
                       replace

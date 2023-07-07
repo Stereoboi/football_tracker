@@ -35,6 +35,7 @@ export default function StandingsNav({ path }: StandingsNavProps) {
         </li>
         <li className="mr-2">
           <Link
+            prefetch={false}
             href={`/standings/${path}/topscorers`}
             className={`inline-block p-4 rounded-t-lg ${
               isActive === "topscorers"

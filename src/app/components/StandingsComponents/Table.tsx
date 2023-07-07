@@ -67,6 +67,7 @@ export default function Table({ standings }: { standings: StandingsResponse }) {
                     </div>
                     <Link
                       href={`/team/${el.team.id}/${standings.response[0].league.id}`}
+                      prefetch={false}
                       passHref
                       replace
                       scroll={false}
