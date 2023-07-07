@@ -12,10 +12,10 @@ export async function generateMetadata({ params: { standingsId } }: Params) {
   const result: ScorersApiResponse = await getTopScorers(standingsId);
 
   return {
-    // title: `top scor`,
-    // description: `top scor`,
-    title: `${result.response[0].statistics[0].league.name} top scorers`,
-    description: `Search results for ${result.response[0].statistics[0].league.name} top scorers `,
+    title: `top scor`,
+    description: `top scor`,
+    // title: `${result.response[0].statistics[0].league.name} top scorers`,
+    // description: `Search results for ${result.response[0].statistics[0].league.name} top scorers `,
   };
 }
 

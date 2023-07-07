@@ -9,10 +9,11 @@ export default function ScorersList({
 }) {
   const result = scorers.response;
   const error = scorers.errors.requests;
+  console.log(error === process.env.NEXT_PUBLIC_ERROR);
 
   return (
     <div className="relative grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-      {error ? (
+      {error === process.env.NEXT_PUBLIC_ERROR ? (
         <Error error={error} />
       ) : (
         result.map((el, index) => (
