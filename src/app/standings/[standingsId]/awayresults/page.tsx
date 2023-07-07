@@ -9,12 +9,12 @@ type Params = {
 };
 
 export async function generateMetadata({ params: { standingsId } }: Params) {
-  // const standingData = await getStanding(standingsId);
+  const standingData = await getStanding(standingsId);
   return {
-    title: `away`,
-    description: `away`,
-    // title: `${standingData.response[0].league.name} home results`,
-    // description: `Search results for ${standingData.response[0].league.name} home results `,
+    // title: `away`,
+    // description: `away`,
+    title: `${standingData.response[0].league.name} home results`,
+    description: `Search results for ${standingData.response[0].league.name} home results `,
   };
 }
 

@@ -11,14 +11,14 @@ type Params = {
 };
 
 export async function generateMetadata({ params: { standingsId } }: Params) {
-  // const result = await getCurrentMatches(standingsId);
-  // console.log(result.response[0].league);
+  const result = await getCurrentMatches(standingsId);
+  console.log(result.response[0].league);
 
   return {
-    title: `fixtures`,
-    description: `Fixtures `,
-    // title: `${result.response[0].league.round}`,
-    // description: `Fixtures for ${result.response[0].league.name} ${result.response[0].league.round}`,
+    // title: `fixtures`,
+    // description: `Fixtures `,
+    title: `${result.response[0].league.round}`,
+    description: `Fixtures for ${result.response[0].league.name} ${result.response[0].league.round}`,
   };
 }
 

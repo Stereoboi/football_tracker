@@ -17,10 +17,10 @@ export async function generateMetadata({
   const fixturesFetch = await getFixtures(fixturesId, standingsId);
 
   return {
-    title: `fixtures id`,
-    description: `Fixtures id`,
-    // title: `${fixturesFetch.response[0].league.round}`,
-    // description: `Fixtures for ${fixturesFetch.response[0].league.name} ${fixturesFetch.response[0].league.round}`,
+    // title: `fixtures id`,
+    // description: `Fixtures id`,
+    title: `${fixturesFetch.response[0].league.round}`,
+    description: `Fixtures for ${fixturesFetch.response[0].league.name} ${fixturesFetch.response[0].league.round}`,
   };
 }
 

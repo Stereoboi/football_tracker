@@ -3,8 +3,8 @@ import moment from "moment";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Post page",
-  description: "Post page",
+  title: "Article page",
+  description: "Article page",
 };
 
 type Params = {

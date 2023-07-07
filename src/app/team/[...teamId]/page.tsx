@@ -7,12 +7,12 @@ import PlayersList from "@/app/components/TeamPageComponents/PlayersList";
 import TeamCard from "@/app/components/TeamPageComponents/TeamCard";
 
 export async function generateMetadata({ params: { teamId } }: Params) {
-  // const teamData = await getTeam(teamId[0], teamId[1]);
+  const teamData = await getTeam(teamId[0], teamId[1]);
   return {
-    title: `team`,
-    description: `team`,
-    // title: `${teamData.response[0].team.name} page`,
-    // description: `Information about ${teamData.response[0].team.name} squad and venue`,
+    // title: `team`,
+    // description: `team`,
+    title: `${teamData.response[0].team.name} page`,
+    description: `Information about ${teamData.response[0].team.name} squad and venue`,
   };
 }
 
