@@ -4,6 +4,8 @@ import getFixtures from "../../../../../../lib/getFixtures";
 import { Fixtures } from "../../../../../../types/fixturesTypes";
 import RegularLap from "@/app/components/StandingsComponents/RegularLap";
 import getListOfRounds from "../../../../../../lib/getListOfRounds";
+import Error from "@/app/components/Error/Error";
+
 type Params = {
   params: {
     fixturesId: string;
@@ -15,13 +17,18 @@ export async function generateMetadata({
   params: { fixturesId, standingsId },
 }: Params) {
   const fixturesFetch = await getFixtures(fixturesId, standingsId);
-
-  return {
-    // title: `fixtures id`,
-    // description: `Fixtures id`,
-    title: `${fixturesFetch.response[0].league.round}`,
-    description: `Fixtures for ${fixturesFetch.response[0].league.name} ${fixturesFetch.response[0].league.round}`,
-  };
+  const error = fixturesFetch.errors.requests;
+  if (error) {
+    return {
+      title: `REACHED THE REQUEST LIMIT`,
+      description: `REACHED THE REQUEST LIMIT`,
+    };
+  } else {
+    return {
+      title: `${fixturesFetch.response[0].league.round}`,
+      description: `Fixtures for ${fixturesFetch.response[0].league.name} ${fixturesFetch.response[0].league.round}`,
+    };
+  }
 }
 
 export default async function FixtureByRound({
@@ -33,11 +40,18 @@ export default async function FixtureByRound({
   );
   const fixturesData = (await fixturesFetch).response;
   const rounds: any = await getListOfRounds(standingsId);
+  const error = rounds.errors.requests;
 
   return (
     <>
-      <RegularLap rounds={rounds} />
-      <FixturesTable fixtures={fixturesData} />
+      {error === process.env.NEXT_PUBLIC_ERROR ? (
+        <Error error={error} />
+      ) : (
+        <>
+          <RegularLap rounds={rounds} />
+          <FixturesTable fixtures={fixturesData} />
+        </>
+      )}
     </>
   );
 }

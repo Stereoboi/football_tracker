@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function NewsList({ data }: { data: Post[] }) {
   return (
-    <div className="grid lg:grid-cols-2 lg:gap-6 2xl:grid-cols-3 2xl:gap-4 mt-5 justify-center">
+    <div className="grid lg:grid-cols-2 lg:gap-6 xl:grid-cols-3 xl:gap-2  2xl:grid-cols-4 2xl:gap-2 mt-5 justify-center">
       {data.length === 0 ? (
         <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 dark:text-white text-xl font-bold ">
           News page is empty ¯\_(ツ)_/¯
@@ -17,7 +17,7 @@ export default function NewsList({ data }: { data: Post[] }) {
           return (
             <div
               key={el._id}
-              className="flex flex-col max-w-sm min-w-min bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+              className="mb-5 lg:mb-0 flex flex-col max-w-sm min-w-min bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
             >
               <Image
                 className="rounded-t-lg h-44 w-full object-cover"
@@ -28,7 +28,7 @@ export default function NewsList({ data }: { data: Post[] }) {
               />
 
               <div className="p-5 w-full ">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white  text-ellipsis overflow-hidden line-clamp-3">
+                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-700 dark:text-white  text-ellipsis overflow-hidden line-clamp-3">
                   {el.title}
                 </h5>
 

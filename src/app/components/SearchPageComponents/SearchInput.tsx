@@ -16,7 +16,7 @@ export default function SearchInput({ value }: any) {
   });
 
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form className="mt-4" onSubmit={formik.handleSubmit}>
       <label
         htmlFor="search"
         className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"

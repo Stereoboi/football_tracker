@@ -4,6 +4,7 @@ import SearchInput from "../components/SearchPageComponents/SearchInput";
 import findTeamByName from "../../../lib/FindTeamByName";
 import { SearchTeam } from "../../../types/searchType";
 import FoundTeamsList from "../components/SearchPageComponents/FoundTeamsList";
+import Error from "../components/Error/Error";
 
 export default function SearchPage() {
   const [inputValue, setInputValue] = useState("");
@@ -15,9 +16,9 @@ export default function SearchPage() {
       const fetchedSearchResult = async () => {
         const result = await findTeamByName(inputValue);
 
-        // if (result.errors.requests === process.env.NEXT_PUBLIC_ERROR) {
-        //   setErr(true);
-        // }
+        if (result.errors.requests === process.env.NEXT_PUBLIC_ERROR) {
+          setErr(true);
+        }
         setFoundData(result);
       };
       fetchedSearchResult();
@@ -25,9 +26,15 @@ export default function SearchPage() {
   }, [inputValue]);
 
   return (
-    <div>
-      <SearchInput value={setInputValue} />
-      {foundData && <FoundTeamsList data={foundData} />}
-    </div>
+    <>
+      {err ? (
+        <Error error={process.env.NEXT_PUBLIC_ERROR} />
+      ) : (
+        <div>
+          <SearchInput value={setInputValue} />
+          {foundData && <FoundTeamsList data={foundData} />}
+        </div>
+      )}
+    </>
   );
 }
