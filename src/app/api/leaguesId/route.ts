@@ -9,7 +9,7 @@ export async function GET() {
         "x-rapidapi-host": "v3.football.api-sports.io",
         "x-rapidapi-key": `${process.env.NEXT_PUBLIC_FOOTBALL_API_KEY}`,
       },
-      next: { revalidate: 600 },
+      next: { revalidate: 0 },
     }
   );
   const data = await res.json();
