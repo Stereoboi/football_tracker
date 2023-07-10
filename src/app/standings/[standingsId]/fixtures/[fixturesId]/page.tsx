@@ -17,6 +17,7 @@ export async function generateMetadata({
   params: { fixturesId, standingsId },
 }: Params) {
   const fixturesFetch = await getFixtures(fixturesId, standingsId);
+
   const error = fixturesFetch.errors.requests;
   if (error) {
     return {
@@ -40,6 +41,10 @@ export default async function FixtureByRound({
   );
   const fixturesData = (await fixturesFetch).response;
   const rounds: any = await getListOfRounds(standingsId);
+  const filteredData = rounds.response.filter((el: any) =>
+    el.includes("Regular Season -")
+  );
+
   const error = rounds.errors.requests;
 
   return (
@@ -48,7 +53,7 @@ export default async function FixtureByRound({
         <Error error={error} />
       ) : (
         <>
-          <RegularLap rounds={rounds} />
+          <RegularLap rounds={filteredData} />
           <FixturesTable fixtures={fixturesData} />
         </>
       )}

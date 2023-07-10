@@ -15,11 +15,12 @@ export default function RegularLap({ rounds }: any) {
   const standingsId = Number(number);
 
   useEffect(() => {
-    setNumberOfRounds(rounds.response);
-  }, [rounds.response]);
+    setNumberOfRounds(rounds);
+  }, [rounds]);
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(event);
+    console.log(event);
 
     if (pathname.length > 23) {
       return router.push(`/standings/${standingsId}/fixtures/${event}`);

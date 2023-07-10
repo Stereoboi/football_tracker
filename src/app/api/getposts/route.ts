@@ -6,12 +6,12 @@ export const GET = async (request: Request) => {
   const url = new URL(request.url);
 
   let step = url.searchParams.get("step");
-  let lim = 6;
+  let lim = 12;
   if (!step) {
     step = "1";
     lim = 0;
   }
-  const skip = (Number(step) - 1) * 6;
+  const skip = (Number(step) - 1) * lim;
 
   try {
     await connect();

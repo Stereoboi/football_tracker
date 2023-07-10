@@ -19,7 +19,7 @@ export default function Pagination({ pages }: { pages: Post[] }) {
   }, [params.id]);
 
   useEffect(() => {
-    const totalPages = pages.length / 6;
+    const totalPages = pages.length / 12;
 
     setNewsNum(Math.ceil(totalPages));
     setReady(true);
