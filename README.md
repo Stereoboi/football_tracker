@@ -1,34 +1,29 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Football Tracker
 
-## Getting Started
+Football Tracker is a web application built using Next.js 13 and TypeScript, incorporating best practices from the Next.js 13 documentation. It provides a platform for tracking football leagues, teams, news, and player information. The application leverages several technologies, including Material Tailwind/React, Flowbite, Formik, Moment, Mongoose, NextAuth, SWR, Tailwind CSS, UploadThing, and TypeScript.
 
-First, run the development server:
+## Features:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+# Leagues (/leagues): This page displays a list of top global football leagues, allowing users to explore and discover league information.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+# Search (/search): The search page enables users to find football clubs worldwide by their name, facilitating easy access to specific club information.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# News (/news): This page presents news articles related to football. Authenticated users can create news articles, leveraging the recommended practices from the Next.js documentation, such as Parallel Routes and Intercepting Routes. Articles are opened in a modal window for a seamless user experience, while sharing article links allows them to be accessed as standalone pages. The page also includes pagination for better navigation through the articles.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+# Dashboard (/dashboard): This protected route allows registered users to create, edit, and delete posts. Posts are stored in MongoDB, while images are managed using UploadThing. Automatic updates are implemented using mutations, enhancing the user experience.
 
-## Learn More
+# Standings (/standings/id): This route displays the standings and tournament tables for the selected championship. The navigation menu allows users to access additional routes for more detailed championship information.
 
-To learn more about Next.js, take a look at the following resources:
+# Top Scorers (/standings/id/topscorers): This page showcases the leading goal scorers of the championship.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Home Matches (/standings/id/home): This page presents the results of matches played at home.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Away Matches (/standings/id/away): This page displays the results of matches played away.
 
-## Deploy on Vercel
+# Fixtures (/standings/id/fixtures): This page shows the results of the latest round of matches, and users can select any round within the season for more detailed information.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Team (/team): This page provides detailed information about a football club, including the squad roster and key player information.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+As a pet project, Football Tracker employs caching and optimized request validation to work within the limitations of the free API, which allows only 100 requests. If the request limit is exceeded, error handling and interception are implemented for all routes, providing notifications about the request limit. This is done to enhance the interaction with the application. Additionally, users have the ability to choose between light and dark themes, providing a personalized visual experience.
+
+## Note: Please ensure to update the dependencies and packages according to the versions specified in the project's package.json file.
