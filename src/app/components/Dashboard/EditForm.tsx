@@ -8,6 +8,7 @@ import UploadBtn from "../createPost/UploadButton";
 import getNewsById from "../../../../lib/getNewsFromDbById";
 import editPost from "../../../../lib/editPost";
 import useSWR, { useSWRConfig } from "swr";
+import { Article } from "../../../../types/ArticleType";
 
 type Post = {
   _id: string;
@@ -23,7 +24,8 @@ type Post = {
 
 export default function EditForm({ id }: { id: string }) {
   const router = useRouter();
-  const [value, setValue] = useState({});
+  const [value, setValue] = useState<Article>({} as Article);
+  const [image, setImage] = useState<string>();
   const [ready, setReady] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const { data: session, status } = useSession();
@@ -49,13 +51,13 @@ export default function EditForm({ id }: { id: string }) {
     },
 
     onSubmit: (values) => {
-      setValue((prevValue) => ({
-        ...prevValue,
+      setValue({
+        img: image,
         title: values.title,
         description: values.description,
         content: values.content,
         username: session?.user?.name,
-      }));
+      });
       router.back();
       // mutate(
       //   `${process.env.NEXT_PUBLIC_DEPLOY_URL}/api/getuserspost?username=${session?.user?.name}`
@@ -136,7 +138,7 @@ export default function EditForm({ id }: { id: string }) {
           placeholder="Write your thoughts here..."
         ></textarea>
         <div>
-          <UploadBtn state={setValue} />
+          <UploadBtn state={setImage} />
           <button
             // disabled={disabled}
             // type="submit"

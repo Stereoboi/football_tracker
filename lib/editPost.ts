@@ -1,4 +1,6 @@
-export default async function editPost(value: any, id: any) {
+import { Article } from "../types/ArticleType";
+
+export default async function editPost(value: Article, id: string) {
   const { img, title, description, content, username } = value;
 
   const res = await fetch(

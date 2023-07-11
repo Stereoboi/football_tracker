@@ -1,4 +1,7 @@
-export default async function addUserToDatabase(name: any, email: any) {
+export default async function addUserToDatabase(
+  name: string | undefined | null,
+  email: string | undefined | null
+) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_DEPLOY_URL}/api/addusertodb`,
     {
