@@ -5,10 +5,10 @@ import { useRouter, usePathname } from "next/navigation";
 import getListOfRounds from "../../../../lib/getListOfRounds";
 import { Select, Option } from "../MaterialTailwindReecsport";
 
-export default function RegularLap({ rounds }: any) {
+export default function RegularLap({ rounds }: { rounds: string[] }) {
   const router = useRouter();
   const pathname = usePathname();
-  const [numberOfRounds, setNumberOfRounds] = useState([]);
+  const [numberOfRounds, setNumberOfRounds] = useState<string[]>([]);
   const [selectedOption, setSelectedOption] = useState<any>("Choose a round");
   const [, , number] = pathname.split("/");
 

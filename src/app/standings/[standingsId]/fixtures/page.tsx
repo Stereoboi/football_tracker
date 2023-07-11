@@ -31,6 +31,7 @@ export async function generateMetadata({ params: { standingsId } }: Params) {
 export default async function Fixtures({ params: { standingsId } }: Params) {
   const result = await getCurrentMatches(standingsId);
   const rounds: any = await getListOfRounds(standingsId);
+
   const filteredData = rounds.response.filter((el: any) =>
     el.includes("Regular Season -")
   );

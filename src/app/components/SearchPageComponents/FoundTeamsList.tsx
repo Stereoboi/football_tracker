@@ -8,7 +8,11 @@ export default function FoundTeamsList({ data }: { data: SearchTeam }) {
       <ul className="dark:text-white text-gray-600 grid gap-3 sm:gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  mt-6">
         {data.response.map((el) => {
           return (
-            <Link key={el.team.id} href={`/team/${el.team.id}`}>
+            <Link
+              key={el.team.id}
+              href={`/team/${el.team.id}`}
+              prefetch={false}
+            >
               <li className=" dark:bg-blue-gray-800 rounded-lg bg-gradient-custom hover:rounded-lg focus:rounded-lg transition-all duration-300 ">
                 <div className="flex flex-col items-center justify-center p-2 rounded-lg  hover:shadow-lg hover:scale-98 bg-light-blue-100  dark:bg-blue-gray-800 hover:rounded-lg transition-all duration-300 ">
                   <img
