@@ -40,8 +40,8 @@ export default async function FixtureByRound({
     standingsId
   );
   const fixturesData = (await fixturesFetch).response;
-  const rounds: any = await getListOfRounds(standingsId);
-  const filteredData = rounds.response.filter((el: any) =>
+  const rounds = await getListOfRounds(standingsId);
+  const filteredData = rounds.response.filter((el: string[]) =>
     el.includes("Regular Season -")
   );
 

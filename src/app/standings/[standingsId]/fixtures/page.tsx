@@ -30,9 +30,9 @@ export async function generateMetadata({ params: { standingsId } }: Params) {
 
 export default async function Fixtures({ params: { standingsId } }: Params) {
   const result = await getCurrentMatches(standingsId);
-  const rounds: any = await getListOfRounds(standingsId);
+  const rounds = await getListOfRounds(standingsId);
 
-  const filteredData = rounds.response.filter((el: any) =>
+  const filteredData = rounds.response.filter((el: string[]) =>
     el.includes("Regular Season -")
   );
   const error = rounds.errors.requests;

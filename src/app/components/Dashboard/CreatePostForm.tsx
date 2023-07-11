@@ -5,9 +5,11 @@ import { useSession } from "next-auth/react";
 import addPostToDatabase from "../../../../lib/addPostToDb";
 import UploadBtn from "../createPost/UploadButton";
 import useSWR, { useSWRConfig } from "swr";
+import { Article } from "../../../../types/ArticleType";
 
 export default function CreateFormPost() {
-  const [value, setValue] = useState({});
+  const [value, setValue] = useState<Article>({} as Article);
+  const [image, setImage] = useState<string>();
   const [ready, setReady] = useState(false);
   const [disabled, setDisabled] = useState(true);
   const { data: session, status } = useSession();
@@ -23,13 +25,13 @@ export default function CreateFormPost() {
       content: "",
     },
     onSubmit: (values) => {
-      setValue((prevValue) => ({
-        ...prevValue,
+      setValue({
+        img: image,
         title: values.title,
         description: values.description,
         content: values.content,
         username: session?.user?.name,
-      }));
+      });
 
       setReady(true);
       formik.resetForm();
@@ -46,7 +48,7 @@ export default function CreateFormPost() {
     if (ready) {
       const addPost = async () => {
         try {
-          const result = await addPostToDatabase(value);
+          await addPostToDatabase(value);
           mutate();
         } catch (error) {
           console.log(error);
@@ -104,7 +106,7 @@ export default function CreateFormPost() {
         placeholder="Write your thoughts here..."
       ></textarea>
       <div>
-        <UploadBtn state={setValue} />
+        <UploadBtn state={setImage} />
         <button
           disabled={disabled}
           // type="submit"

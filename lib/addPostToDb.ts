@@ -1,4 +1,6 @@
-export default async function addPostToDatabase(value: any) {
+import { Article } from "../types/ArticleType";
+
+export default async function addPostToDatabase(value: Article) {
   const { img, title, description, content, username } = value;
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_DEPLOY_URL}/api/addpost`, {

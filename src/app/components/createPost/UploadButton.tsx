@@ -39,7 +39,7 @@ export default function UploadBtn({ state }: any) {
           if (res) {
             setImages(res);
 
-            state({ img: res[0].fileUrl });
+            state(res[0].fileUrl);
             // const json = JSON.stringify(res);
             // Do something with the response
             // console.log(json);
