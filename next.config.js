@@ -7,6 +7,7 @@ const nextConfig = {
       "media-3.api-sports.io",
       "pbs.twimg.com",
       "uploadthing.com",
+      "res.cloudinary.com",
     ],
   },
 };

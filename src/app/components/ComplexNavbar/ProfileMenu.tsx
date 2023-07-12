@@ -21,6 +21,7 @@ export function ProfileMenu({ user }: Session) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const closeMenu = () => setIsMenuOpen(false);
   const { data: session } = useSession();
+  console.log(user?.image);
 
   return (
     <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">
@@ -37,7 +38,6 @@ export function ProfileMenu({ user }: Session) {
             className=""
             src={user?.image!}
           />
-
           <ChevronDownIcon
             strokeWidth={2.5}
             className={`h-3 w-3 transition-transform ${

@@ -1,6 +1,6 @@
 # Football Tracker
 
-Football Tracker is a web application built using Next.js 13 and TypeScript, incorporating best practices from the Next.js 13 documentation. It provides a platform for tracking football leagues, teams, news, and player information. The application leverages several technologies, including Material Tailwind/React, Flowbite, Formik, Moment, Mongoose, NextAuth, SWR, Tailwind CSS, UploadThing, and TypeScript.
+Football Tracker is a responsive web application built using Next.js 13 and TypeScript, incorporating best practices from the Next.js 13 documentation. It provides a platform for tracking football leagues, teams, news, and player information. The application leverages several technologies, including Material Tailwind/React, Flowbite, Formik, Moment, Mongoose, NextAuth, SWR, Tailwind CSS, UploadThing, and TypeScript.
 
 ## Features:
 

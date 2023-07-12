@@ -1,6 +1,7 @@
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "./api/auth/[...nextauth]/route";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Carousel,
   Typography,
@@ -21,10 +22,12 @@ export default async function Home() {
     <div className="absolute right-0 top-0  -z-10 h-screen">
       <Carousel className="">
         <div className="relative h-full w-full">
-          <img
+          <Image
             src="https://res.cloudinary.com/dlrl668wu/image/upload/v1686042832/111174-Borussia_Dortmund_mcymgg.jpg"
             alt="image 1"
             className="h-full w-full object-cover"
+            width={1980}
+            height={1080}
           />
           <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
             <div className="w-3/4 text-center md:w-2/4 relative ">
@@ -58,10 +61,12 @@ export default async function Home() {
           </div>
         </div>
         <div className="relative h-full w-full">
-          <img
+          <Image
             src="https://res.cloudinary.com/dlrl668wu/image/upload/v1686042831/Etihad-Stadium_t5bygg.jpg"
             alt="image 2"
             className="h-full w-full object-cover"
+            width={1980}
+            height={1080}
           />
           <div className="absolute inset-0 grid h-full w-full items-center bg-black/75">
             <div className="w-3/4 pl-12 md:w-2/4 md:pl-20 lg:pl-32 relative">
@@ -96,10 +101,12 @@ export default async function Home() {
           </div>
         </div>
         <div className="relative h-full w-full">
-          <img
+          <Image
             src="https://res.cloudinary.com/dlrl668wu/image/upload/v1686043078/0ee77203a222b74929b7f7c028250f08_xh81i2.jpg"
             alt="image 3"
             className="h-full w-full object-cover"
+            width={1980}
+            height={1080}
           />
           <div className="absolute inset-0 grid h-full w-full items-end bg-black/75">
             <div className="w-3/4 pl-12 pb-12 md:w-2/4 md:pl-20 md:pb-20 lg:pl-32 lg:pb-32 relative">
