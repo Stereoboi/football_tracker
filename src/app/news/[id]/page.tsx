@@ -13,9 +13,9 @@ type Params = {
 
 // export async function generateStaticParams() {
 //   const result: Post[] = await getAllNewsFromDb();
-
+//   console.log(result);
 //   return result.map((el) => ({
-//     id: el._id,
+//     id: el._id.toString(),
 //   }));
 // }
 
