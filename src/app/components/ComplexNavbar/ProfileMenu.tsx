@@ -21,7 +21,6 @@ export function ProfileMenu({ user }: Session) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const closeMenu = () => setIsMenuOpen(false);
   const { data: session } = useSession();
-  console.log(user?.image);
 
   return (
     <Menu open={isMenuOpen} handler={setIsMenuOpen} placement="bottom-end">

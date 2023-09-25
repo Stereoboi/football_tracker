@@ -2,8 +2,14 @@ import { NextResponse, NextRequest } from "next/server";
 import connect from "../../../../../util/mongoConnect";
 import Post from "@/models/Post";
 
-export const GET = async (request: Request, { params }: { params: any }) => {
+export const GET = async (
+  request: NextRequest,
+  { params }: { params: any }
+) => {
+  console.log(params);
+
   const { id } = params;
+  console.log(id);
 
   try {
     await connect();

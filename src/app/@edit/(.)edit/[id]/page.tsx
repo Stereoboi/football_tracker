@@ -1,7 +1,7 @@
 import React from "react";
 import Modal from "@/app/components/modal";
-import getNewsById from "../../../../../lib/getNewsFromDbById";
 import EditForm from "@/app/components/Dashboard/EditForm";
+import { SWRProvider } from "@/app/swr-provider";
 
 type Params = {
   params: {
@@ -14,7 +14,9 @@ export default function EditPostPage({ params }: Params) {
 
   return (
     <Modal>
-      <EditForm id={id} />
+      <SWRProvider>
+        <EditForm id={id} />
+      </SWRProvider>
     </Modal>
   );
 }
