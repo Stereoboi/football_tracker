@@ -4,7 +4,7 @@ export default async function getFixtures(
 ) {
   const params = {
     league: standingsId,
-    season: 2022,
+    season: 2023,
     round: `Regular Season - ${fixturesId}`,
   };
 

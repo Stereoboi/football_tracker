@@ -6,7 +6,6 @@ import getRankColor from "../../../../util/getRankColor";
 import ToolTip from "./ToolTip";
 
 export default function Table({ standings }: { standings: StandingsResponse }) {
-  console.log(standings);
 
   return (
     <div className="flex justify-center align-middle dark:text-white ">
