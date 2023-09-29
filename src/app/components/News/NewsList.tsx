@@ -25,6 +25,7 @@ export default function NewsList({ data }: { data: Post[] }) {
                 alt=""
                 width={400}
                 height={400}
+                priority
               />
 
               <div className="p-5 w-full ">
