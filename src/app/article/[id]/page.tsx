@@ -47,10 +47,10 @@ export default async function PostPage({ params: { id } }: Params) {
             height={600}
             className="mb-3 h-full w-full xl:h-[360px] xl:w-[672px] xl:mx-auto object-cover"
           />
-          <p className="dark:text-gray-400">{post.content}</p>
-          <div className="flex flex-col mt-3">
+          <p className="dark:text-gray-400 text-justify">{post.content}</p>
+          <div className="flex justify-between mt-3">
             <p>Author: {post.username}</p>
-            <p>{moment(`${post.createdAt}`).format("YYYY-MM-DD HH:mm:ss")}</p>
+            <p>{moment(`${post.createdAt}`).format("LL")}</p>
           </div>
         </div>
       </div>

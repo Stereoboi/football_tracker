@@ -32,8 +32,8 @@ export default async function NewsModal({ params }: Params) {
   return (
     <Modal>
       <div className="flex justify-center dark:text-white max-h-[550px] 2xl:max-h-[650px] ">
-        <div className="flex flex-col max-h-screen w-full">
-          <h1 className="text-lg font-bold mb-3 dark:text-white">
+        <div className="flex flex-col w-full">
+          <h1 className="text-lg font-bold mb-3 dark:text-white text-center">
             {post.title}
           </h1>
 
@@ -45,10 +45,12 @@ export default async function NewsModal({ params }: Params) {
             className="mb-3 h-full w-full xl:h-[360px] xl:w-[672px] xl:mx-auto object-cover"
           />
 
-          <p className="dark:text-gray-400">{post.content}</p>
-          <div className="flex flex-col mt-3">
-            <p>Author: {post.username}</p>
-            <p>{moment(`${post.createdAt}`).format("YYYY-MM-DD HH:mm:ss")}</p>
+          <div>
+            <p className="dark:text-gray-400 text-justify">{post.content}</p>
+            <div className="flex justify-between align-middle my-3">
+              <p>Author: {post.username}</p>
+              <p>{moment(`${post.createdAt}`).format("LL")}</p>
+            </div>
           </div>
         </div>
       </div>
