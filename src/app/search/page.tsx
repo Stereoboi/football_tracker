@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import SearchInput from "../components/SearchPageComponents/SearchInput";
-import findTeamByName from "../../../lib/findTeamByName";
+import findTeamByName from "../../../lib/FindTeamByName";
 import { SearchTeam } from "../../../types/searchType";
 import FoundTeamsList from "../components/SearchPageComponents/FoundTeamsList";
 import Error from "../components/Error/Error";
