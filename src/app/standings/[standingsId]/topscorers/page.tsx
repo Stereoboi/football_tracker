@@ -42,6 +42,3 @@ export default async function TopScorers({ params: { standingsId } }: Params) {
     </>
   );
 }
-// <div>
-//   <ScorersList scorers={result} />
-// </div>

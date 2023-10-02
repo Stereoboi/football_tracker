@@ -1,6 +1,8 @@
 import React from "react";
 import { SquadAPIResponse } from "../../../../types/PlayerType";
 export default function PlayersList({ data }: { data: SquadAPIResponse }) {
+  console.log(data);
+
   return (
     <div>
       <ul className="dark:text-white text-gray-600 bg-light-blue-100 dark:bg-gray-800 rounded-lg mt-10 lg:mt-0 max-w-md lg:max-w-xl mx-auto">

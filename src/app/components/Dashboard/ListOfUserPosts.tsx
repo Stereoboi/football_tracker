@@ -62,7 +62,7 @@ export default function ListOfUserPostss() {
                     {post.description}
                   </p>
                   <p className="mb-3 text-gray-700 dark:text-gray-400 truncate">
-                    {moment(`${post.createdAt}`).format("YYYY-MM-DD HH:mm:ss")}
+                    {moment(`${post.createdAt}`).format("LL")}
                   </p>
                   <div className="flex">
                     <button

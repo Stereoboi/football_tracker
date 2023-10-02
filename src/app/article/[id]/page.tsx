@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Article page",
@@ -33,21 +34,23 @@ export default async function PostPage({ params: { id } }: Params) {
   const post = await getNewsById(id);
 
   return (
-    <div>
-      <div className="flex justify-center items-center dark:text-white h-screen">
-        <div className="flex flex-col max-h-screen w-full max-w-2xl mx-auto">
+    <div className="p-4">
+      <div className="flex justify-center items-center dark:text-white">
+        <div className="flex flex-col w-full max-w-2xl mx-auto">
           <h1 className="text-lg font-bold mb-3 dark:text-white">
             {post.title}
           </h1>
-          <img
+          <Image
             src={post.img}
             alt="img"
-            className="mb-3 max-w-2xl max-h-[380px]"
+            width={800}
+            height={600}
+            className="mb-3 h-full w-full xl:h-[360px] xl:w-[672px] xl:mx-auto object-cover"
           />
-          <p className="dark:text-gray-400">{post.content}</p>
-          <div className="flex flex-col mt-3">
+          <p className="dark:text-gray-400 text-justify">{post.content}</p>
+          <div className="flex justify-between mt-3">
             <p>Author: {post.username}</p>
-            <p>{moment(`${post.createdAt}`).format("YYYY-MM-DD HH:mm:ss")}</p>
+            <p>{moment(`${post.createdAt}`).format("LL")}</p>
           </div>
         </div>
       </div>

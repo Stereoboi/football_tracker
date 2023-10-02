@@ -45,12 +45,13 @@ export default function AwayResultsTable({
                 </td>
                 <td>
                   <div className="flex items-center">
-                    <div style={{ width: "30px", height: "30px" }}>
+                    <div className="relative flex justify-center align-middle w-[30px] h-[30px] ">
                       <Image
                         src={el.team.logo}
                         alt="team logo"
-                        width={30}
-                        height={30}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        style={{ objectFit: "contain" }}
                       />
                     </div>
                     <Link

@@ -1,8 +1,8 @@
 // process.env.NEXT_FOOTBALL_API_KEY;
-
+import { API_QUERY_KEYS } from "../util/consts/app.keys.const";
 export default async function getCurrentMatches(standingsId: string) {
   const res = await fetch(
-    `https://v3.football.api-sports.io/fixtures?league=${standingsId}&season=2022&last=10`,
+    `${process.env.NEXT_FOOTBALL_API_URL}${API_QUERY_KEYS.FIXTURES}?${API_QUERY_KEYS.LEAGUE}=${standingsId}&${process.env.NEXT_FOOTBALL_API_SEASON}&last=10`,
     {
       method: "GET",
       headers: {

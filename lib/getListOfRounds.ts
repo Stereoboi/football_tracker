@@ -1,6 +1,8 @@
+import { API_QUERY_KEYS } from "../util/consts/app.keys.const";
+
 export default async function getListOfRounds(standingsId: string) {
   const res = await fetch(
-    `https://v3.football.api-sports.io/fixtures/rounds?league=${standingsId}&season=2022`,
+    `${process.env.NEXT_FOOTBALL_API_URL}${API_QUERY_KEYS.FIXTURES}/${API_QUERY_KEYS.ROUNDS}?${API_QUERY_KEYS.LEAGUE}=${standingsId}&${process.env.NEXT_FOOTBALL_API_SEASON}`,
     {
       method: "GET",
       headers: {

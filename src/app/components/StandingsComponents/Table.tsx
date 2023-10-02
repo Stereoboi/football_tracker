@@ -20,22 +20,22 @@ export default function Table({ standings }: { standings: StandingsResponse }) {
               <p>MP</p>
             </th>
             <th>
-              <p className="hidden md:block">W</p>
+              <p className="hidden md:block ml-2">W</p>
             </th>
             <th>
-              <p className="hidden md:block">D</p>
+              <p className="hidden md:block ml-2">D</p>
             </th>
             <th>
-              <p className="hidden md:block">L</p>
+              <p className="hidden md:block ml-2">L</p>
             </th>
             <th>
               <p>G</p>
             </th>
-            <th className="hidden lg:block ">
+            <th className="hidden lg:block ml-2 ">
               <p>+/-</p>
             </th>
             <th>
-              <p>Points</p>
+              <p className="ml-2">Pnts.</p>
             </th>
             <th></th>
           </tr>
@@ -45,24 +45,25 @@ export default function Table({ standings }: { standings: StandingsResponse }) {
 
             return (
               <tr key={el.team.id}>
-                <td>
+                <td title={el.description || ""}>
                   <p className={`relative `}>
                     {el.rank}.
                     {rankColor !== "bg-transparent" && (
                       <span
-                        className={`absolute top-0 right-full w-2 h-full ${rankColor} `}
+                        className={`absolute top-0 right-full w-2 h-full ${rankColor}`}
                       ></span>
                     )}
                   </p>
                 </td>
                 <td>
                   <div className="flex items-center">
-                    <div style={{ width: "30px", height: "30px" }}>
+                    <div className="relative flex justify-center align-middle w-[30px] h-[30px] ">
                       <Image
                         src={el.team.logo}
                         alt="team logo"
-                        width={30}
-                        height={30}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        style={{ objectFit: "contain" }}
                       />
                     </div>
                     <Link

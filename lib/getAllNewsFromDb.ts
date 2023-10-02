@@ -1,6 +1,8 @@
+import { QUERY_KEYS } from "../util/consts/app.keys.const";
+
 export default async function getAllNewsFromDb() {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_DEPLOY_URL}/api/getallposts`,
+    `${process.env.NEXT_PUBLIC_DEPLOY_URL}${QUERY_KEYS.GET_ALL_POSTS}`,
     {
       method: "GET",
     }
@@ -10,19 +12,3 @@ export default async function getAllNewsFromDb() {
 
   return res.json();
 }
-
-// export default async function getAllNewsFromDb() {
-//   const res = await fetch(
-//     `${process.env.NEXT_PUBLIC_DEPLOY_URL}/api/getposts`,
-//     {
-//       method: "GET",
-//       next: { revalidate: 0 },
-//     }
-//   );
-
-//   if (!res.ok) {
-//     console.log("error from fetch", res.status);
-//   }
-
-//   return res.json();
-// }

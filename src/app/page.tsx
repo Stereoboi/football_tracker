@@ -2,6 +2,8 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "./api/auth/[...nextauth]/route";
 import Link from "next/link";
 import Image from "next/image";
+import getBase64 from "../../util/imageHelpers/getLocalBase64";
+
 import {
   Carousel,
   Typography,
@@ -18,6 +20,10 @@ export const metadata: Metadata = {
 export default async function Home() {
   const session = await getServerSession(authOptions);
 
+  const myBlurDataUrl = await getBase64(
+    "https://res.cloudinary.com/dlrl668wu/image/upload/v1686042832/111174-Borussia_Dortmund_mcymgg.jpg"
+  );
+
   return (
     <div className="absolute right-0 top-0  -z-10 h-screen">
       <Carousel className="">
@@ -28,6 +34,8 @@ export default async function Home() {
             className="h-full w-full object-cover"
             width={1980}
             height={1080}
+            placeholder="blur"
+            blurDataURL={myBlurDataUrl}
             priority
           />
           <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">

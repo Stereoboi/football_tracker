@@ -20,6 +20,10 @@ module.exports = withMT({
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "gradient-custom": "linear-gradient(163deg, #00ff75 0%, #3700ff 100%)",
         brush: "url('../../public/brush.png')",
+        card: "url('../../public/card.png')",
+        card2: "url('../../public/card2.png')",
+        card3: "url('../../public/card3.png')",
+        card4: "url('../../public/card4.png')",
       },
       boxShadow: {
         lg: "0px 0px 30px 1px rgba(0, 255, 117, 0.30)",
@@ -39,7 +43,22 @@ module.exports = withMT({
     },
     colors: {
       moron: "rgb(139,0,0)",
+      ros: "#831843",
     },
   },
-  plugins: [require("flowbite/plugin")],
+  plugins: [
+    require("flowbite/plugin"),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".no-scrollbar::-webkit-scrollbar": {
+          display: "none",
+        },
+        ".no-scrollbar": {
+          "-ms-overflow-style": "none",
+          "scrollbar-width": "none",
+        },
+      };
+      addUtilities(newUtilities);
+    },
+  ],
 });

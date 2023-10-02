@@ -1,6 +1,9 @@
+import { API_QUERY_KEYS } from "../util/consts/app.keys.const";
 export default async function findTeamByName(name: string) {
+  // `${process.env.NEXT_FOOTBALL_API_URL}${API_QUERY_KEYS.TEAMS}?${API_QUERY_KEYS.SEARCH}=${name}`,
+
   const res = await fetch(
-    `https://v3.football.api-sports.io/teams?search=${name}`,
+    `${process.env.NEXT_PUBLIC_FOOTBALL_API_URL}${API_QUERY_KEYS.TEAMS}?${API_QUERY_KEYS.SEARCH}=${name}`,
     {
       method: "GET",
       headers: {

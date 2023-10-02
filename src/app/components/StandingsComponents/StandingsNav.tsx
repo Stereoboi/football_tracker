@@ -26,7 +26,7 @@ export default function StandingsNav({ path }: StandingsNavProps) {
             href={`/standings/${path}`}
             className={`inline-block p-4 rounded-t-lg ${
               isActive === path
-                ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
+                ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-white"
                 : "text-gray-400"
             }`}
           >
@@ -39,7 +39,7 @@ export default function StandingsNav({ path }: StandingsNavProps) {
             href={`/standings/${path}/topscorers`}
             className={`inline-block p-4 rounded-t-lg ${
               isActive === "topscorers"
-                ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
+                ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-white"
                 : "text-gray-400"
             }`}
           >
@@ -51,7 +51,7 @@ export default function StandingsNav({ path }: StandingsNavProps) {
             href={`/standings/${path}/homeresults`}
             className={`inline-block p-4 rounded-t-lg ${
               isActive === "homeresults"
-                ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
+                ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-white"
                 : "text-gray-400"
             }`}
           >
@@ -63,7 +63,7 @@ export default function StandingsNav({ path }: StandingsNavProps) {
             href={`/standings/${path}/awayresults`}
             className={`inline-block p-4 rounded-t-lg ${
               isActive === "awayresults"
-                ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
+                ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-white"
                 : "text-gray-400"
             }`}
           >
@@ -76,7 +76,7 @@ export default function StandingsNav({ path }: StandingsNavProps) {
             href={`/standings/${path}/fixtures`}
             className={`inline-block p-4 rounded-t-lg ${
               isActive === "fixtures"
-                ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500"
+                ? "text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-white"
                 : "text-gray-400"
             }`}
           >

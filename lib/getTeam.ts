@@ -1,8 +1,8 @@
 // process.env.NEXT_FOOTBALL_API_KEY;
-
+import { API_QUERY_KEYS } from "../util/consts/app.keys.const";
 export default async function getTeam(teamId: string, teamsId: string) {
   const res = await fetch(
-    `https://v3.football.api-sports.io/teams?id=${teamId}`,
+    `${process.env.NEXT_FOOTBALL_API_URL}${API_QUERY_KEYS.TEAMS}?${API_QUERY_KEYS.ID}=${teamId}`,
     {
       method: "GET",
       headers: {

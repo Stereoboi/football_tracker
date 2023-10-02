@@ -1,6 +1,7 @@
+import { API_QUERY_KEYS } from "../util/consts/app.keys.const";
 export default async function getStanding(leaguesId: string) {
   const res = await fetch(
-    `https://v3.football.api-sports.io/standings?league=${leaguesId}&season=2022`,
+    `${process.env.NEXT_FOOTBALL_API_URL}${API_QUERY_KEYS.STANDINGS}?${API_QUERY_KEYS.LEAGUE}=${leaguesId}&${process.env.NEXT_FOOTBALL_API_SEASON}`,
     {
       method: "GET",
       headers: {
