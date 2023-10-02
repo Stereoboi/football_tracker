@@ -14,7 +14,7 @@ export default function ScorersList({
   scorers: ScorersApiResponse;
 }) {
   const result = scorers.response;
-  // console.log(result);
+  console.log(result);
 
   return (
     <div className="relative grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4  text-gray-600">

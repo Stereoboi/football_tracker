@@ -40,7 +40,7 @@ export default function Modal({ children }: { children: React.ReactNode }) {
     >
       <div
         ref={wrapper}
-        className=" max-h w-11/12 sm:w-10/12 md:w-8/12 lg:w-1/2 p-6 dark:bg-gray-800 bg-white rounded-lg  overflow-y-auto"
+        className=" max-h w-11/12 sm:w-10/12 md:w-8/12 lg:w-1/2 p-6 dark:bg-gray-800 bg-white rounded-lg  overflow-auto no-scrollbar"
       >
         {children}
       </div>

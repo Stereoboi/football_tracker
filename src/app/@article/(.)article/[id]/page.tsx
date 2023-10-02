@@ -31,7 +31,7 @@ export default async function NewsModal({ params }: Params) {
 
   return (
     <Modal>
-      <div className="flex justify-center dark:text-white max-h-[750px]">
+      <div className="flex justify-center dark:text-white max-h-[550px] 2xl:max-h-[650px] ">
         <div className="flex flex-col max-h-screen w-full">
           <h1 className="text-lg font-bold mb-3 dark:text-white">
             {post.title}
